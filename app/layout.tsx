@@ -1,16 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import "../node_modules/@carbon/styles/css/styles.css"; // Carbon styles
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+import { Geist, Geist_Mono } from "next/font/google";
+import { IBM_Plex_Sans } from "next/font/google";
+
+// Carbon's font
+const ibmPlexSans = IBM_Plex_Sans({
+  weight: ["400", "600"],
   subsets: ["latin"],
+  variable: "--font-ibm-plex-sans",
+});
+
+// Your preferred fonts
+const geistSans = Geist({
+  subsets: ["latin"],
+  variable: "--font-geist-sans",
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  
   subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
@@ -26,7 +36,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`
+          ${ibmPlexSans.variable}
+          ${geistSans.variable}
+          ${geistMono.variable}
+          antialiased
+        `}
       >
         {children}
       </body>
