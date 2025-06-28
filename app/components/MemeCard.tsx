@@ -1,4 +1,3 @@
-import Button from "@/app/components/ui/Button"
 
 type Meme = {
   id: string
@@ -8,15 +7,7 @@ type Meme = {
 
 const MemeCard = ({ meme }: { meme: Meme }) => {
   return (
-    <div className="mb-6">
-      <img
-        src={meme.image_url}
-        alt={meme.caption || 'Meme'}
-        className="h-[400px] rounded-md object-cover"
-      />
-      {meme.caption && <p className="mt-2 text-center text-sm text-gray-700">{meme.caption}</p>}
-      <Button variant="primary">Download</Button>
-    </div>
+    <></>
   )
 }
 
