@@ -5,7 +5,7 @@ export const extractTextFromImage = async (file: File): Promise<string> => {
 
   try {
     const { data } = await Tesseract.recognize(file, "eng");
-    console.log("OCR result:", data.text);
+    // console.log("OCR result:", data.text);
     return data.text.trim();
   } catch (err) {
     console.error("OCR failed:", err);

@@ -38,7 +38,8 @@ An evolving roadmap of features and phases as MemesKenya grows.
 > **Goal:** Reduce manual work and make it semi-autonomous.
 
 - [ ] Script to scrape WhatsApp meme drops
-- [ ] Auto-upload tool (CLI or UI)
+- [x] Auto-upload tool (CLI or UI)
+- [ ] Auto-upload to supabase
 - [ ] Tag suggestion via AI or basic NLP
 - [ ] Meme submission form
 - [ ] Auto-moderation / duplicate detection
