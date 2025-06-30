@@ -1,3 +1,4 @@
+import { ModeToggle } from "@/components/ModeToggle";
 import { Button } from "@/components/ui/button";
 
 export default async function Page() {
@@ -6,6 +7,7 @@ export default async function Page() {
       <Button variant={"default"} size={"lg"}>
         Click me
       </Button>
+      <ModeToggle />
     </div>
   );
 }
