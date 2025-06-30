@@ -41,9 +41,12 @@ export default function GenerateCardsPage() {
       {cards.length > 0 && (
         <>
           <Separator />
-          <div className="flex  gap-6 flex-wrap">
+          <div className="flex gap-6 flex-wrap justify-center max-w-screen overflow-x-hidden">
             {cards.map((card, index) => (
-              <div key={index} className="space-y-4">
+              <div
+                key={index}
+                className="origin-top scale-[0.90] sm:scale-100 space-y-4"
+              >
                 <div className="flex items-center space-x-2">
                   <Checkbox
                     id={`select-${index}`}

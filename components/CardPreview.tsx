@@ -1,4 +1,5 @@
 "use client";
+
 import React from "react";
 
 export const CardPreview = React.forwardRef<HTMLDivElement, { text: string }>(
@@ -13,4 +14,5 @@ export const CardPreview = React.forwardRef<HTMLDivElement, { text: string }>(
     </div>
   ),
 );
+
 CardPreview.displayName = "CardPreview";
