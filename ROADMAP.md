@@ -13,7 +13,7 @@ An evolving roadmap of features and phases as MemesKenya grows.
 - [x] Supabase setup (DB + storage + client)
 - [x] Upload some test memes manually to Supabase
 - [ ] Infinite scroll feed of memes
-- [ ] MemeCard UI with image  + download button
+- [ ] MemeCard UI with image + download button
 - [ ] Mobile-first layout tuning (swipe feel, tap targets)
 - [ ] Clean watermark or branding on downloads
 
