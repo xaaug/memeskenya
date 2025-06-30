@@ -3,9 +3,9 @@
 import * as React from "react";
 import { useState, useRef } from "react";
 
-import ImageUploader from "@/components/ImageUploader";
-import { CardPreview } from "@/components/CardPreview";
-import { DownloadButton } from "@/components/DownloadButton";
+import ImageUploader from "@/app/console/generate-cards/_components/ImageUploader";
+import { CardPreview } from "@/app/console/generate-cards/_components/CardPreview";
+import { DownloadButton } from "@/app/console/generate-cards/_components/DownloadButton";
 
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
