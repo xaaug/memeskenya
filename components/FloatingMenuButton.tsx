@@ -23,7 +23,7 @@ export default function FloatingMenuButton() {
             <MenuIcon className="h-5 w-5" />
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-48">
+        <PopoverContent className="w-48 mr-6 mt-2">
           <nav className="space-y-2 flex flex-col items-start gap-2">
             <Button asChild variant="outline">
               <Link href="/">Home</Link>

@@ -10,10 +10,13 @@ import { DownloadButton } from "@/components/DownloadButton";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
 import { Separator } from "@/components/ui/separator";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
 export default function GenerateCardsPage() {
-  const [cards, setCards] = useState<{ text: string; file: File }[]>([]);
+  const [cards, setCards] = useState<{ text: string; file?: File }[]>([]);
   const [selected, setSelected] = useState<boolean[]>([]);
+  const [inputText, setInputText] = useState("");
   const refs = useRef<React.RefObject<HTMLDivElement>[]>([]);
 
   const handleComplete = (data: { text: string; file: File }[]) => {
@@ -26,6 +29,19 @@ export default function GenerateCardsPage() {
     }
   };
 
+  const generateTextCards = () => {
+    const entries = inputText
+      .split(",")
+      .map((entry) => entry.trim())
+      .filter((entry) => entry.length > 0);
+
+    const data = entries.map((text) => ({ text }));
+
+    setCards(data);
+    setSelected(data.map(() => true));
+    refs.current = data.map(() => React.createRef<HTMLDivElement>());
+  };
+
   const toggleSelect = (index: number) => {
     setSelected((prev) => prev.map((val, i) => (i === index ? !val : val)));
   };
@@ -36,6 +52,17 @@ export default function GenerateCardsPage() {
         <h1 className="text-3xl font-bold tracking-tight">Cards Maker</h1>
       </div>
 
+      {/* Textarea Input for Text Cards */}
+      <div className="space-y-4">
+        <Textarea
+          placeholder="Enter card texts, separated by commas..."
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        />
+        <Button onClick={generateTextCards}>Generate Cards</Button>
+      </div>
+
+      {/* Image-based Cards */}
       <ImageUploader onComplete={handleComplete} />
 
       {cards.length > 0 && (

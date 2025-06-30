@@ -1,13 +1,3 @@
-import { ModeToggle } from "@/components/ModeToggle";
-import { Button } from "@/components/ui/button";
-
 export default async function Page() {
-  return (
-    <div className="m-64">
-      <Button variant={"default"} size={"lg"}>
-        Click me
-      </Button>
-      <ModeToggle />
-    </div>
-  );
+  return <div className="flex justify-center items-center font-mono">Home</div>;
 }
