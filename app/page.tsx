@@ -1,9 +1,11 @@
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
 
-export default function Page() {
+export default async function Page() {
   return (
-    <div>
-      <Button variant={"default"} size={"lg"}>Click me</Button>
+    <div className="m-64">
+      <Button variant={"default"} size={"lg"}>
+        Click me
+      </Button>
     </div>
-  )
+  );
 }
