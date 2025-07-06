@@ -1,3 +1,10 @@
-export default async function Page() {
-  return <div className="flex justify-center items-center font-mono">Home</div>;
+import MemeFeed from "./components/MemeFeed";
+
+
+export default function HomePage() {
+  return (
+    <main className="w-full min-h-screen bg-background text-foreground">
+      <MemeFeed />
+    </main>
+  );
 }

@@ -1,15 +1,19 @@
-import { supabase } from "./supabaseClient";
+import { supabase } from './supabaseClient';
 
-export const fetchMemes = async (page = 0, pageSize = 10) => {
-  const from = page * pageSize;
-  const to = from + pageSize - 1;
+export async function fetchMemes(page = 0, limit = 10) {
+  const from = page * limit;
+  const to = from + limit - 1;
 
   const { data, error } = await supabase
-    .from("memes")
-    .select("*")
-    .order("created_at", { ascending: false })
+    .from('memes')
+    .select('*')
+    .order('created_at', { ascending: false })
     .range(from, to);
 
-  if (error) throw error;
+  if (error) {
+    console.error('Failed to fetch memes:', error);
+    return [];
+  }
+
   return data;
-};
+}
