@@ -18,6 +18,7 @@ export default function MemeFeed() {
 
   async function loadMoreMemes() {
     const newMemes = await fetchMemes(page, limit);
+    console.log(newMemes)
     setMemes((prev) => [...prev, ...newMemes]);
     setPage((prev) => prev + 1);
     if (newMemes.length < limit) setHasMore(false);
