@@ -22,8 +22,6 @@ export default function GenerateCardsPage() {
   const handleComplete = (data: { text: string; file: File }[]) => {
     setCards(data);
     setSelected(data.map(() => true));
-
-    // Only reset refs if the count changes
     if (refs.current.length !== data.length) {
       refs.current = data.map(() => React.createRef<HTMLDivElement>());
     }
@@ -52,7 +50,6 @@ export default function GenerateCardsPage() {
         <h1 className="text-3xl font-bold tracking-tight">Cards Maker</h1>
       </div>
 
-      {/* Textarea Input for Text Cards */}
       <div className="space-y-4">
         <Textarea
           placeholder="Enter card texts, separated by commas..."
@@ -62,7 +59,6 @@ export default function GenerateCardsPage() {
         <Button onClick={generateTextCards}>Generate Cards</Button>
       </div>
 
-      {/* Image-based Cards */}
       <ImageUploader onComplete={handleComplete} />
 
       {cards.length > 0 && (
